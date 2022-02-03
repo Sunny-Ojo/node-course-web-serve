@@ -34,6 +34,29 @@ app.get('/about', (req, res) =>
 		pageTitle: 'About Page',
 	})
 );
+
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs', {
+		pageTitle: 'My Projects',
+		projectDetails: [
+			{
+				name: 'nodejs app',
+			},
+			{
+				name: 'php app',
+			},
+			{
+				name: 'react app',
+			},
+			{
+				name: 'laravel app',
+			},
+			{
+				name: 'vuejs app',
+			},
+		],
+	});
+});
 app.get('/bad', (req, res) =>
 	res.send(
 		{
