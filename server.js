@@ -10,17 +10,17 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
 app.use((req, res, next) => {
 	const time = new Date().toString();
-	if (1 == 1) {
-		console.log(`You visited this app at ${time}`);
-		fs.appendFile(
-			'server.log',
-			` IP: ${req.ip}, Hostname: ${req.hostname} ` + '\n',
-			(error) => console.log(error)
-		);
-		res.render('maintenance.hbs');
-	} else {
-		next();
-	}
+	// if (1 == 1) {
+	// 	console.log(`You visited this app at ${time}`);
+	// 	fs.appendFile(
+	// 		'server.log',
+	// 		` IP: ${req.ip}, Hostname: ${req.hostname} ` + '\n',
+	// 		(error) => console.log(error)
+	// 	);
+	// 	res.render('maintenance.hbs');
+	// } else {
+	next();
+	// }
 });
 app.get('/', (req, res) =>
 	res.render('welcome.hbs', {
